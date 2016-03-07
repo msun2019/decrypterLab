@@ -1,3 +1,6 @@
+# Author: Michael Sun
+# Date: 3/7
+
 f = open("encrypt.txt", "r+")
 l = open("decrypt.txt", "r+")
 
@@ -45,6 +48,26 @@ while shiftNumber < 96:
 	asciiCodes = []
 	asciiValues = []
 	message = [] 
+
+
+s = open("decrypt.txt", "r")
+correctMessage = s.readlines()
+finderNumber = 0
+messageFound = 0
+
+while messageFound == 0:
+	correctNumber = 0 + finderNumber
+	if "Michael" in correctMessage[correctNumber]:
+		messageFound = 1 
+		l.seek(0)
+		l.truncate()
+		l.write(correctMessage[correctNumber])
+	else:
+		finderNumber += 1
+
+
+
+
 
 	
 print("Everything has been decoded, check the file.")
